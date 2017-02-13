@@ -1,13 +1,7 @@
 const angular = require('angular');
+const beanieComponent = require('./beanieComponent');
+const beanieConfig = require('./beanieConfig');
 
 angular.module('beanie', [])
-    .component('beanie', {
-        controller: () => {
-            $onInit: () => {
-                document.title = this.title
-            }
-        },
-        bindings: {
-            title: '@'
-        }
-    });
+    .component('beanie', beanieComponent)
+    .constant('beanieConfig', beanieConfig);
