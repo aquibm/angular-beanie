@@ -4,6 +4,7 @@
   "description": "Angular (1.5+) component to easily set the document title",
   "main": "dist/index.js",
   "scripts": {
+    "build": "webpack",
     "test": "ava"
   },
   "repository": {
@@ -22,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/aquibm/angular-beanie/issues"
   },
-  "homepage": "https://github.com/aquibm/angular-beanie#readme"
+  "homepage": "https://github.com/aquibm/angular-beanie#readme",
+  "devDependencies": {
+    "angular": "^1.6.2",
+    "webpack": "^2.2.1"
+  }
 }
