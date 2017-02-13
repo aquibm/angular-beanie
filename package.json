@@ -1,0 +1,26 @@
+{
+  "name": "angular-beanie",
+  "version": "1.0.0",
+  "description": "Angular (1.5+) component to easily set the document title",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aquibm/angular-beanie.git"
+  },
+  "keywords": [
+    "angular",
+    "beanie",
+    "title",
+    "component",
+    "ng"
+  ],
+  "author": "Aquib Master <aquibmaster@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aquibm/angular-beanie/issues"
+  },
+  "homepage": "https://github.com/aquibm/angular-beanie#readme"
+}
