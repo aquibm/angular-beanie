@@ -26,15 +26,15 @@
   "homepage": "https://github.com/aquibm/angular-beanie#readme",
   "devDependencies": {
     "angular": "^1.6.2",
-    "angular-mock": "^1.0.0",
+    "angular-mocks": "^1.6.2",
     "jasmine-core": "^2.5.2",
     "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-script-launcher": "^1.0.0",
     "karma-systemjs": "^0.16.0",
-    "karma-webpack": "^2.0.2",
     "webpack": "^2.2.1"
   }
 }

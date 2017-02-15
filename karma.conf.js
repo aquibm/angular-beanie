@@ -1,9 +1,5 @@
 const karma = require('karma');
 
-var webpackConfig = require('./webpack.config.js');
-webpackConfig.entry = {};
-webpackConfig.devtool = 'inline-source-map';
-
 module.exports = function(config) {
     config.set({
         singleRun: true,
@@ -20,13 +16,16 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
 
         plugins: [
-            require('karma-webpack'),
             require('karma-jasmine'),
-            require('karma-phantomjs-launcher')
+            require('karma-phantomjs-launcher'),
+            require('karma-chrome-launcher')
         ],
 
-        files: ['./test/*.spec.js'],
-
-        webpack: webpackConfig
+        files: [
+            './node_modules/angular/angular.js',
+            './node_modules/angular-mocks/angular-mocks.js',
+            './dist/angular-beanie.js',
+            './test/*.spec.js'
+        ]
     });
 };
