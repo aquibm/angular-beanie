@@ -1,4 +1,3 @@
 module.exports = {
-    defaultTitle: '',
     titleTemplate: ''
 };

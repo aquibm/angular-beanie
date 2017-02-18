@@ -80,14 +80,29 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports) {
 
-function beanieController() {
+function beanieController(beanieConfig) {
+    
+    function buildTitle(title) {
+        const template = beanieConfig.titleTemplate || '';
+
+        if(!template) {
+            return title;
+        }
+
+        return template.replace(/%title%/ig, title);
+    }
+    
     return {
         $onInit: function() {
             if(!this.title) return;
-            document.title = this.title;
+            document.title = buildTitle(this.title);
         }
     };
 }
+
+beanieController.$inject = [
+    'beanieConfig'
+];
 
 module.exports = {
     controller: beanieController,
@@ -102,7 +117,6 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-    defaultTitle: '',
     titleTemplate: ''
 };
 
