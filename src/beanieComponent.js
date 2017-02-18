@@ -1,8 +1,8 @@
-function beanieController($document) {
+function beanieController() {
     return {
         $onInit: function() {
-            console.log('Injected');
-            $document[0].title = this.title;
+            if(!this.title) return;
+            document.title = this.title;
         }
     };
 }

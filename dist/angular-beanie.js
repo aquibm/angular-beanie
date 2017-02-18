@@ -80,11 +80,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports) {
 
-function beanieController($document) {
+function beanieController() {
     return {
         $onInit: function() {
-            console.log('Injected');
-            $document[0].title = this.title;
+            if(!this.title) return;
+            document.title = this.title;
         }
     };
 }
@@ -102,8 +102,8 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-    defaultTitle: 'Hello world!',
-    titleTemplate: '{{ title }}'
+    defaultTitle: '',
+    titleTemplate: ''
 };
 
 
