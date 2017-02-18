@@ -5,9 +5,12 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
-    "test": "karma start",
-    "watch": "karma start --singleRun=false --autoWatch=true --autoWatchInterval=1",
-    "debug": "karma start --singleRun=false --autoWatch=true --autoWatchInterval=1 --browsers=Chrome"
+    "build:watch": "webpack --watch",
+    "test": "webpack && karma start",
+    "test:watch": "karma start --singleRun=false --autoWatch=true --autoWatchInterval=1",
+    "test:debug": "karma start --singleRun=false --autoWatch=true --autoWatchInterval=1 --browsers=Chrome",
+    "start": "npm-run-all --parallel build:watch test:watch",
+    "debug": "npm-run-all --parallel build:watch test:debug"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-script-launcher": "^1.0.0",
     "karma-systemjs": "^0.16.0",
+    "npm-run-all": "^4.0.1",
     "webpack": "^2.2.1"
   }
 }
