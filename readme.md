@@ -4,6 +4,7 @@
 ## Installation
 - Run `npm install angular-beanie`
 - In your angular module definition, take on `beanie` as a dependency.
+  
   ```javascript
   angular.module('my-awesome-app', ['beanie']);
   ```
