@@ -76,11 +76,46 @@ describe('beanie component tests', function() {
 
         expect(document.title).toBe('Some Page');
     });
+
+    it('should set the document title to the fallback title when the beanie title is empty', function() {
+        setTitleTemplate('%title% | My Awesome Site');
+        setFallbackTitle('My Awesome Site');
+
+        addBeanie('');
+
+        expect(document.title).toBe('My Awesome Site');
+    });
+
+    it('should not set the document title to the fallback title when the beanie template is not empty', function() {
+        setTitleTemplate('%title% | My Awesome Site');
+        setFallbackTitle('My Awesome Site');
+
+        addBeanie('Users');
+
+        expect(document.title).toBe('Users | My Awesome Site');
+    });
+
+    it('should not consider using the fallback title if the title template is empty', function() {
+        const title = 'Set outside of beanie';
+        setDocumentTitle(title);
+        setTitleTemplate('');
+        setFallbackTitle('Some awesome project site');
+
+        addBeanie('');
+
+        expect(document.title).toBe(title);
+    });
 });
 
 function setTitleTemplate(template) {
     angular.extend(beanieConfig, {
         titleTemplate: template
+    });
+}
+
+function setFallbackTitle(title) {
+    angular.extend(beanieConfig, {
+        fallbackTitle: title
     });
 }
 

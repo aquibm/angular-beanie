@@ -1,3 +1,4 @@
 module.exports = {
-    titleTemplate: ''
+    titleTemplate: '',
+    fallbackTitle: ''
 };
