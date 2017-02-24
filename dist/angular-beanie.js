@@ -84,6 +84,15 @@ function beanieController(beanieConfig) {
     
     function buildTitle(title) {
         const template = beanieConfig.titleTemplate || '';
+        const fallback = beanieConfig.fallbackTitle || '';
+
+        if(!title) {
+            if(fallback && template) {
+                return fallback;
+            }
+
+            return document.title;
+        }
 
         if(!template) {
             return title;
@@ -94,7 +103,6 @@ function beanieController(beanieConfig) {
     
     return {
         $onInit: function() {
-            if(!this.title) return;
             document.title = buildTitle(this.title);
         }
     };
@@ -117,7 +125,8 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-    titleTemplate: ''
+    titleTemplate: '',
+    fallbackTitle: ''
 };
 
 
