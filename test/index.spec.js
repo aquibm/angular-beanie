@@ -105,6 +105,17 @@ describe('beanie component tests', function() {
 
         expect(document.title).toBe(title);
     });
+
+    it('should not consider using the fallback title if it\'s undefined', function() {
+        const title = 'Set outisde of beanie';
+        setDocumentTitle(title);
+        setFallbackTitle();
+        setTitleTemplate('%title% | Some title');
+
+        addBeanie('');
+
+        expect(document.title).toBe(title);
+    });
 });
 
 function setTitleTemplate(template) {
