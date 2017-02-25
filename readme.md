@@ -24,7 +24,7 @@ yarn add angular-beanie
 ```javascript
 angular.module('my-awesome-app', [
     'beanie'
-])
+]);
 ```
 
 3. You're ready to use angular beanie!
@@ -74,7 +74,7 @@ angular.module('my-awesome-app', ['beanie'])
             titleTemplate: '%title% - My Aesome App',
             fallbackTitle: 'My Aesome App'
         });
-    }
+    });
 ```
 
 Adding an empty beanie `<beanie />` to a component would now set the title to the fallback title.
